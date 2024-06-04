@@ -22,12 +22,13 @@ const AppBarWrapper = styled(AppBar)(({ theme }) => ({
 
 const InputBaseWrapper = styled(InputBase)(({ theme }) => ({
   opacity: "0.6",
-  padding: `0px ${theme.spacing(1)}px`,
+  padding: `8px ${theme.spacing(1)}px`,
   fontSize: "0.8rem",
   border: "1px solid #ccc",
   borderRadius: "25px",
+  borderColor: "#878A87",
   display: "flex",
-  alignItems: "center",
+  alignItem: "center",
   color: "#333",
   "&:hover": {
     backgroundColor: "#D9D8D8",
