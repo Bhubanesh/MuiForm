@@ -2,7 +2,7 @@ import { TextField } from '@mui/material'
 import React from 'react'
 
 function Input(props) {
-    const [ name, value , label, variant ]  = props
+    const { name, value , label, variant }  = props;
   return (
     <TextField 
     variant = {variant} 
@@ -10,7 +10,7 @@ function Input(props) {
     values = {value} 
     label = {label}
      />
-  )
+  );
 }
 
 export default Input
