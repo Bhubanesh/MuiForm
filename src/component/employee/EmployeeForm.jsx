@@ -22,8 +22,13 @@ const initialFValues = {
 };
 
 function EmployeeForm() {
-  const { values, setValues, handleInputChange, handleDateChange } =
-    useForm(initialFValues);
+  const {
+    values,
+    setValues,
+    handleInputChange,
+    handleDateChange,
+    handleCheckChange,
+  } = useForm(initialFValues);
 
   return (
     <Form>
@@ -84,6 +89,13 @@ function EmployeeForm() {
             label="HireDate"
             value={values.hireDate}
             onChange={handleDateChange}
+          />
+
+          <Control.Checkbox
+            name="isPermanent"
+            label="Permanent Employee"
+            value={values.isPermanent}
+            onChange={handleCheckChange}
           />
         </Grid>
       </Grid>

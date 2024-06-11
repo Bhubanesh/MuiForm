@@ -20,11 +20,20 @@ export const useForm = (props) => {
     });
   };
 
+  const handleCheckChange = (e) => {
+    const { name, checked } = e.target;
+    setValues({
+      ...values,
+      [name] : checked
+    })
+  }
+
   return {
     values,
     setValues,
     handleInputChange,
     handleDateChange,
+    handleCheckChange
   };
 };
 
