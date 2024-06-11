@@ -3,7 +3,7 @@ import SideMenu from "../component/SideMenu";
 import Header from "../component/Header";
 //import styled from "@mui/material";
 import { CssBaseline, createTheme, ThemeProvider, styled } from "@mui/material";
-import Employee from "../page/employee/Employee";
+import Employee from  "../component/employee/Employee";
 
 const theme = createTheme({
   palette: {

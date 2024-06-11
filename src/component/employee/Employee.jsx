@@ -1,7 +1,7 @@
 import React from "react";
 
 import EmployeeForm from "./EmployeeForm";
-import PageHeader from "../../component/PageHeader";
+import PageHeader from "../PageHeader";
 
 import { PeopleOutlineTwoTone } from "@mui/icons-material";
 import { Paper, styled } from "@mui/material";

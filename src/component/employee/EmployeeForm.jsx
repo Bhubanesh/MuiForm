@@ -1,8 +1,9 @@
 import { Grid } from "@mui/material";
 import React from "react";
 import { useState } from "react";
-import { useForm, Form } from "../../component/useForm";
-import Control from "../../controls/Control";
+import { useForm, Form } from "../useForm";
+import Control from "../controls/Control";
+import * as employeeServices from "../services/EmployeeServices";
 
 const genderItems = [
   { id: "male", title: "Male" },
@@ -21,12 +22,16 @@ const initialFValues = {
 };
 
 function EmployeeForm() {
-  const { values, setValues, handleInputChange } = useForm(initialFValues);
+  const { values, setValues, handleInputChange, handleDateChange } =
+    useForm(initialFValues);
 
   return (
     <Form>
       <Grid container>
-        <Grid item xs={6}>
+        <Grid
+          item
+          xs={6}
+        >
           <Control.Input
             variant="outlined"
             value={values.fullName}
@@ -56,13 +61,29 @@ function EmployeeForm() {
             onChange={handleInputChange}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid
+          item
+          xs={6}
+        >
           <Control.RadioGroup
             name="gender"
-            value={values.gender}
             label="Gender"
+            value={values.gender}
             onChange={handleInputChange}
             items={genderItems}
+          />
+          <Control.Select
+            name="departmentID"
+            label="DepartmentID"
+            value={values.departmentID}
+            options={employeeServices.getDepartmentCollection()}
+            onChange={handleInputChange}
+          />
+          <Control.DatePicker
+            name="hireDate"
+            label="HireDate"
+            value={values.hireDate}
+            onChange={handleDateChange}
           />
         </Grid>
       </Grid>

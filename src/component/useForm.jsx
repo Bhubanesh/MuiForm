@@ -5,10 +5,18 @@ export const useForm = (props) => {
   const [values, setValues] = useState(props);
 
   const handleInputChange = (e) => {
-    const { name, values } = e.target;
+    console.log(e);
+    const { name, value } = e.target;
     setValues({
       ...values,
-      [name]: values,
+      [name]: value,
+    });
+  };
+
+  const handleDateChange = (date) => {
+    setValues({
+      ...values,
+      hireDate: date,
     });
   };
 
@@ -16,22 +24,19 @@ export const useForm = (props) => {
     values,
     setValues,
     handleInputChange,
+    handleDateChange,
   };
 };
 
-
-const TextFieldWrapper = styled('form')(({ theme }) => ({
-    "& .MuiFormControl-root": {
-      width: "60%",
-      margin: theme.spacing(1),
-    },
-  }));
+const TextFieldWrapper = styled("form")(({ theme }) => ({
+  "& .MuiFormControl-root": {
+    width: "60%",
+    margin: theme.spacing(1),
+  },
+}));
 
 export const Form = (props) => {
   return (
-    <TextFieldWrapper>
-        {props.children}
-    </TextFieldWrapper>
-  )
-}
-
+    <TextFieldWrapper autoComplete="off">{props.children}</TextFieldWrapper>
+  );
+};
