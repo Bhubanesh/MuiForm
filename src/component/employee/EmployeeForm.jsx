@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Grid, Stack } from "@mui/material";
 import React from "react";
 import { useState } from "react";
 import { useForm, Form } from "../useForm";
@@ -97,10 +97,25 @@ function EmployeeForm() {
             value={values.isPermanent}
             onChange={handleCheckChange}
           />
+          <Stack
+            direction="row"
+            spacing={2}
+          >
+            <Control.Button
+              type="submit"
+              text="SUBMIT"
+              size="large"
+            />
+            <Control.Button
+              text="REST"
+              size="large"
+              color="secondary"
+            />
+          </Stack>
         </Grid>
       </Grid>
     </Form>
   );
 }
 
-export default EmployeeForm;
+export default EmployeeForm; 

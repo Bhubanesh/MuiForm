@@ -33,7 +33,7 @@ function PageHeader(props) {
   const { title, subtitle, icon } = props;
   
   return (
-    <PaperWrapper elevation="0" square>
+    <PaperWrapper elevation={1} square>
       <PageHeaderWrapper direction="row">
         <CardWrapper>
         {icon}
